@@ -215,6 +215,46 @@ namespace designhubAPI.data
                 }
                 context.SaveChanges();
 
+
+
+                //***********************************
+                //Create new instances of ProjectFileGroups
+                //***********************************
+
+                var projectFileGroups = new ProjectFileGroup[]{
+                    new ProjectFileGroup{
+                        ProjectsID = 1,
+                        FileGroupID = 1
+                    },
+                     new ProjectFileGroup{
+                        ProjectsID = 1,
+                        FileGroupID = 2
+                    },
+                     new ProjectFileGroup{
+                        ProjectsID = 2,
+                        FileGroupID = 3
+                    },
+                     new ProjectFileGroup{
+                        ProjectsID = 2,
+                        FileGroupID = 4
+                    },
+                     new ProjectFileGroup{
+                        ProjectsID = 3,
+                        FileGroupID = 5
+                    },
+                     new ProjectFileGroup{
+                        ProjectsID = 3,
+                        FileGroupID = 6
+                    }
+                };
+
+                foreach(ProjectFileGroup pfg in projectFileGroups)
+                {
+                    context.ProjectFileGroup.Add(pfg);
+                }
+
+                context.SaveChanges();
+                
             }//End Using
         }//End Intialize method
     } //End class
