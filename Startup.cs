@@ -55,7 +55,7 @@ namespace designhubAPI
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-           // DbInitializer.Initialize(app.ApplicationServices);
+           DbInitializer.Initialize(app.ApplicationServices);
             app.UseMvc();
 
         }
