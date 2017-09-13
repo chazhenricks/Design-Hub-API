@@ -27,7 +27,7 @@ namespace designhubAPI.data
                 {
                     new Projects{
                        Name = "Walmart Campaign",
-                       DateCreated = new DateTime(2017, 03, 28)
+                       DateCreated = DateTime.Now
                     },
                     new Projects{
                         Name = "LP Campaign",
@@ -254,7 +254,7 @@ namespace designhubAPI.data
                 }
 
                 context.SaveChanges();
-                
+
             }//End Using
         }//End Intialize method
     } //End class

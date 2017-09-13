@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace designhubAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CommentController : Controller
     {
         //****************************** 

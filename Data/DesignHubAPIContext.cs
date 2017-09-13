@@ -20,19 +20,19 @@ namespace designhubAPI.data
         {
             modelBuilder.Entity<Comment>()
             .Property(b => b.DateCreated)
-            .HasDefaultValueSql("strftime('%Y-%m-%d')");
+            .HasDefaultValueSql("strftime('%Y-%m-%d %H %M %S')");
 
              modelBuilder.Entity<File>()
             .Property(b => b.DateCreated)
-            .HasDefaultValueSql("strftime('%Y-%m-%d')");
+            .HasDefaultValueSql("strftime('%Y-%m-%d %H %M %S')");
 
              modelBuilder.Entity<FileGroup>()
             .Property(b => b.DateCreated)
-            .HasDefaultValueSql("strftime('%Y-%m-%d')");
+            .HasDefaultValueSql("strftime('%Y-%m-%d %H %M %S')");
 
              modelBuilder.Entity<Projects>()
             .Property(b => b.DateCreated)
-            .HasDefaultValueSql("strftime('%Y-%m-%d')");
+            .HasDefaultValueSql("strftime('%Y-%m-%d %H %M %S')");
         }
 
 

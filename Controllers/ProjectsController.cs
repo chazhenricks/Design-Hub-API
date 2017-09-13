@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace designhubAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/")]
     public class ProjectsController : Controller
     {
         //****************************** 
@@ -56,7 +56,7 @@ namespace designhubAPI.Controllers
 
         }
 
-        //GET SINGLE COMMENT
+        //GET SINGLE Project
         // GET api/projects/5
         [HttpGet("{id}", Name="GetSingleProject")]
         public IActionResult Get([FromRoute]int id)
@@ -93,7 +93,7 @@ namespace designhubAPI.Controllers
         //******************************* 
 
         //POST NEW PROJECT
-        // POST api/projects
+        // POST url/projects
         [HttpPost]
         public IActionResult Post([FromBody]Projects newProject)
         {

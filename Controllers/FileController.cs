@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace designhubAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class FilesController : Controller
     {
         //****************************** 
@@ -32,8 +32,6 @@ namespace designhubAPI.Controllers
         {
           return _context.File.Count(e => e.FileID == fileID) > 0;
         }
-
-
 
 
         //****************************** 
@@ -128,6 +126,37 @@ namespace designhubAPI.Controllers
             return CreatedAtRoute("GetSingleFile", new { id = newFile.FileID }, newFile);
         }
 
+
+
+
+        //POST NEW FILEGROUP
+        // POST /file
+        [HttpPost("addfilegroup")]
+        public IActionResult Post([FromBody]FileGroup newFileGroup)
+        {
+            //checks to make sure everything to create a new entry is present
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //adds file to local context of DB
+            _context.FileGroup.Add(newFileGroup);
+            
+            //attempts to save the changes
+            try
+            {
+                _context.SaveChanges();
+            }
+            //throws an exception if there is an error
+            catch (DbUpdateException)
+            {
+                throw;   
+            }
+
+            //returns a GET for the row you just created
+            return Ok(newFileGroup);
+        }
 
         //EDIT FILE 
         // PUT api/values/5
